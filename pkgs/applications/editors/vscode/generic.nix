@@ -140,9 +140,9 @@ let
 
     # restore desktop item icons
     extraInstallCommands = ''
-      mkdir -p $out/share/applications
+      mkdir -p "$out/share/applications"
       for item in ${unwrapped}/share/applications/*.desktop; do
-        ln -s $item $out/share/applications/
+        ln -s "$item" "$out/share/applications/"
       done
     '';
 

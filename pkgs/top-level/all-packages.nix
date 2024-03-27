@@ -27121,6 +27121,7 @@ with pkgs;
     buildArmTrustedFirmware
     armTrustedFirmwareTools
     armTrustedFirmwareAllwinner
+    armTrustedFirmwareAllwinnerDebug
     armTrustedFirmwareAllwinnerH616
     armTrustedFirmwareAllwinnerH6
     armTrustedFirmwareQemu

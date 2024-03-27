@@ -120,6 +120,19 @@ in {
     filesToInstall = ["build/${platform}/release/bl31.bin"];
   };
 
+  armTrustedFirmwareAllwinnerDebug = buildArmTrustedFirmware rec {
+    platform = "sun50i_a64";
+    extraMeta.platforms = ["aarch64-linux"];
+    extraMakeFlags = [
+      # These flags are enabled by default, but stripped by nix build. See https://github.com/NixOS/nixpkgs/issues/297358 for details
+      "SUNXI_PSCI_USE_NATIVE=1"
+      "SUNXI_PSCI_USE_SCPI=1"
+      "SUNXI_SETUP_REGULATORS=1"
+      "DEBUG=1"
+    ];
+    filesToInstall = ["build/${platform}/debug/bl31.bin"];
+  };
+
   armTrustedFirmwareAllwinnerH616 = buildArmTrustedFirmware rec {
     platform = "sun50i_h616";
     extraMeta.platforms = ["aarch64-linux"];
